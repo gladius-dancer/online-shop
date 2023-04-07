@@ -11,7 +11,6 @@ function Header() {
 
     const dispatch = useAppDispatch()
 
-
     const logout = () => {
         localStorage.removeItem("token");
         toast.info('User succesfully logout!', {
@@ -63,7 +62,6 @@ function Header() {
                                                                     <div className="dropdown-menu" aria-labelledby="karlDropdown">
                                                                         <a className="dropdown-item" href="index.html">Home</a>
                                                                         <a className="dropdown-item" href="shop.html">Shop</a>
-                                                                        <a className="dropdown-item" href="product-details.html">Product Details</a>
                                                                         <a className="dropdown-item" href="cart.html">Cart</a>
                                                                         <a className="dropdown-item" href="checkout.html">Checkout</a>
                                                                     </div>
@@ -81,14 +79,14 @@ function Header() {
                                     <div className="cart">
                                         <Link to={"/cart"} id="header-cart-btn">
                                         <span className="cart_quantity"></span>
-                                            <i className="ti-heart"></i> Favorites
+                                            <i className="ti-heart"></i> <label className="favorite">Favorites</label>
                                             {/*$ {parseFloat(price.totalPrice).toFixed(2)}*/}
                                         </Link>
                                     </div>
                                     <div className="cart">
                                         <Link to={"/cart"} id="header-cart-btn">
                                             <span className="cart_quantity"></span>
-                                            <i className="ti-bag"></i> Your Bag
+                                            <i className="ti-bag"></i> <label className="bag">Your Bag</label>
                                             {/*$ {parseFloat(price.totalPrice).toFixed(2)}*/}
                                         </Link>
                                     </div>
@@ -105,11 +103,9 @@ function Header() {
                                         {/*<div className="logout" onClick={() => logout()}>*/}
                                         {/*    Logout*/}
                                         {/*</div>*/}
-
                                         <Link to={"/login"}>
                                             <i className="ti-user"></i> Login
                                         </Link>
-
                                     </div>
 
                                     <div className="header-right-side-menu ml-15" onClick={()=>dispatch(change())}>
@@ -117,7 +113,6 @@ function Header() {
                                             <i className="ti-menu" aria-hidden="true"></i>
                                         </a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

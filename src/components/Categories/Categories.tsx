@@ -1,40 +1,62 @@
 import React from "react";
 import cn from "classnames";
 import "./Categories.scss";
-import { Link } from "react-router-dom";
-import {useAppDispatch} from "../../hooks/redux";
+import {Link} from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {change} from "../../store/reducers/NavSlice";
+import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Categories() {
+    const [expanded, setExpanded] = React.useState<string | false>(false);
+    const dispatch = useAppDispatch();
 
-  const dispatch = useAppDispatch();
+    const categories = useAppSelector(state => state.categoriesReduser.categories);
 
-  const loadFilteredProduct = (id: number)=>{
-  }
+    const loadFilteredProduct = (id: number) => {
+    }
 
-  return (
-    <div className="catagories-side-menu">
-      <div id="sideMenuClose" onClick={() => dispatch(change())}>
-        <i className="ti-close"></i>
-      </div>
-      <div className="nav-side-menu">
-        <div className="menu-list">
-          <h6>Categories</h6>
-          <ul id="menu-content" className={cn("menu-content collapse out", "menu")}>
-            {/*{categories?.map((item: any) => (*/}
-            {/*  <li key={item.id} data-toggle="collapse" data-target="#women" className="collapsed">*/}
-            {/*    <Link to="/shop" onClick={() => loadFilteredProduct(item.id)}>{item.name}</Link>*/}
-            {/*  </li>*/}
-            {/*))}*/}
-            <ul>
-              <li>fgdfg</li>
-              <li>fgdfg</li>
-            </ul>
-          </ul>
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+            setExpanded(isExpanded ? panel : false);
+        };
+
+    return (
+        <div className="catagories-side-menu">
+            <div id="sideMenuClose" onClick={() => dispatch(change())}>
+                <i className="ti-close"></i>
+            </div>
+            <div className="nav-side-menu">
+                <div className="menu-list">
+                    <h6>Categories</h6>
+                        {categories.filter((item) => item.children_category.length > 0).map((item) => (
+                            <Accordion key={item.id} expanded={expanded === `panel${item.id}`} onChange={handleChange(`panel${item.id}`)}>
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon/>}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                >
+                                    <Typography>{item.name}</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <Typography>
+                                        <ul>
+                                            {
+                                                item.children_category.map((subItem) => (
+                                                    <li className="ml-3 pt-3 pb-3 fs-6" key={subItem.id}><Link to="/">{subItem.name}</Link></li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </Typography>
+                                </AccordionDetails>
+                            </Accordion>
+                        ))}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+
+
+    );
 }
 
 export default Categories;

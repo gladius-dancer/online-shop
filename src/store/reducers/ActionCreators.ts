@@ -1,6 +1,8 @@
 import {AppDispatch} from "../store";
 import axios from "axios";
 import {authSlice} from "./AuthSlice";
+import {categoriesSlice} from "./CategorySlice";
+import {productsSlice} from "./ProductsSlice";
 
 export const login = (data)=> async (dispatch: AppDispatch) => {
     try {
@@ -23,3 +25,22 @@ export const login = (data)=> async (dispatch: AppDispatch) => {
     }
 }
 
+export const getCategories = ()=> async (dispatch: AppDispatch)=>{
+    try{
+        const response = await axios.get("https://ecommerce.icedev.uz/categories");
+        dispatch(categoriesSlice.actions.setCategories(response.data))
+    }
+    catch(e){
+
+    }
+}
+
+export const getProducts = ()=> async (dispatch: AppDispatch)=>{
+    try{
+        const response = await axios.get("https://ecommerce.icedev.uz/products/");
+        dispatch(productsSlice.actions.setProducts(response.data))
+    }
+    catch(e){
+
+    }
+}
