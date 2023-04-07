@@ -1,22 +1,34 @@
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-interface DateState {
-    day: number[];
-    month: string[];
-    year: number[];
+interface UserState {
+    status: boolean;
+    authStatus: boolean;
+    error: string;
 }
 
-const initialState: DateState = {
-    day: [1],
-    month: ["Январрь"],
-    year: [1990,2012]
+const initialState: UserState = {
+    status: false,
+    authStatus: false,
+    error: "",
+
 }
 
 export const authSlice= createSlice({
-    name: "date",
+    name: "auth",
     initialState,
     reducers:{
-
+        login(state){
+            state.status = true
+        },
+        loginSuccess(state, action: PayloadAction<boolean>){
+            state.status = false
+            state.error = ""
+            state.authStatus = action.payload
+        },
+        loginError(state, action){
+            state.status = false
+            state.error = action.payload
+        }
     }
 })
 

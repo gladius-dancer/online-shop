@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from "../../components/Header/Header";
-import {useAppSelector} from "../../hooks/redux";
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import Categories from "../../components/Categories/Categories";
 
 function Main() {
-    const nav = useAppSelector(state => state.navReduser);
+    const dispatch = useAppDispatch()
+    const nav = useAppSelector(state => state.navReducer);
+
+
     return (
         <div>
             <Categories/>

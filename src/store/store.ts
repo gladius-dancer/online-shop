@@ -1,12 +1,12 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import authReduser from "./reducers/AuthSlice";
-import navReduser from "./reducers/NavSlice";
+import authReducer from "./reducers/AuthSlice";
+import navReducer from "./reducers/NavSlice";
 
-console.log(authReduser)
+console.log(authReducer)
 
 const rootReducer = combineReducers({
-    authReduser,
-    navReduser
+    authReducer,
+    navReducer
 })
 
 export const setupStore = ()=>{

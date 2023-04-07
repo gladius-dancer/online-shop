@@ -8,19 +8,22 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/scss/main.scss";
 import {Link, useNavigate} from "react-router-dom";
 import "./Login.scss";
+import {LoginType} from "../../types/LoginType";
+import {useAppDispatch} from "../../hooks/redux";
+import {login} from "../../store/reducers/ActionCreators";
 
 function Login() {
-
+    const dispatch = useAppDispatch()
     const navigate = useNavigate();
     const schema = yup.object().shape({
-        email: yup.string().required(),
+        username: yup.string().required(),
         password: yup.string().required().min(4),
     });
 
     const methods = useForm({resolver: yupResolver(schema)});
     const {handleSubmit, control, setValue, formState: {errors}} = methods;
-    const onSubmit = async (data: any) => {
-        console.log(data);
+    const onSubmit = async (data: LoginType) => {
+        dispatch(login(data));
     }
 
     // useEffect(()=>{
@@ -47,7 +50,7 @@ function Login() {
                         <div className="column">
                             <div className="col-md-12 mb-3 pl-0 pr-0">
                                 <label htmlFor="first_name">Username <span>*</span></label>
-                                <InputText key="name" name="email" control={control} status={true}/>
+                                <InputText key="name" name="username" control={control} status={true}/>
                             </div>
                             <div className="col-md-12 mb-3 pl-0 pr-0">
                                 <label htmlFor="last_name">Password <span>*</span></label>

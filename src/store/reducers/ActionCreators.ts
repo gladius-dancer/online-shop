@@ -1,24 +1,25 @@
 import {AppDispatch} from "../store";
 import axios from "axios";
+import {authSlice} from "./AuthSlice";
 
-
-const login = async () => {
+export const login = (data)=> async (dispatch: AppDispatch) => {
     try {
+        dispatch(authSlice.actions.login())
         const response = await axios.post(
             "https://ecommerce.icedev.uz/token",
             {
-                username: "polat",
-                password: "12345678"
+                username: data.username,
+                password: data.password
             },
             {
                 headers:{
                     'Content-type': 'application/x-www-form-urlencoded;charset=UTF-8'
                 }
             })
-        await console.log(response);
-    } catch (e) {
-
+            localStorage.setItem("token", JSON.stringify(response.data));
+            dispatch(authSlice.actions.loginSuccess(true))
+    } catch (e: any) {
+        dispatch(authSlice.actions.loginError(e.message))
     }
 }
 
-login()
