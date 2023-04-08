@@ -1,37 +1,11 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {ProductType} from "../../types/ProductType";
 
-interface ProductState {
-    name: string,
-    price: number,
-    description: string,
-    quantity: number,
-    discount: number,
-    id: number,
-    images: [
-        {
-            product_id: number,
-            image_path: string,
-            id: number
-        }
-    ],
-    category: {
-        name: string,
-        id: number,
-        children_category: string[],
-        parent_category: {
-            name: string,
-            id: number
-        }
-    },
-    attributes: string[]
-
+type ProductsState = {
+    products: ProductType[];
 }
 
-type ProductType = {
-    products: ProductState[];
-}
-
-const initialState: ProductType = {
+const initialState: ProductsState = {
     products: []
 }
 
@@ -39,8 +13,7 @@ export const productsSlice = createSlice({
     name: "products",
     initialState,
     reducers: {
-        setProducts(state, action: PayloadAction<ProductType>) {
-            console.log(action.payload)
+        getProducts(state, action: PayloadAction<ProductType[]>) {
             state.products = action.payload
         }
     }

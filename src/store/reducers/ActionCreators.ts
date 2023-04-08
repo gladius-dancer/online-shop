@@ -3,8 +3,9 @@ import axios from "axios";
 import {authSlice} from "./AuthSlice";
 import {categoriesSlice} from "./CategorySlice";
 import {productsSlice} from "./ProductsSlice";
+import {LoginType} from "../../types/LoginType";
 
-export const login = (data)=> async (dispatch: AppDispatch) => {
+export const login = (data: LoginType)=> async (dispatch: AppDispatch) => {
     try {
         dispatch(authSlice.actions.login())
         const response = await axios.post(
@@ -38,7 +39,7 @@ export const getCategories = ()=> async (dispatch: AppDispatch)=>{
 export const getProducts = ()=> async (dispatch: AppDispatch)=>{
     try{
         const response = await axios.get("https://ecommerce.icedev.uz/products/");
-        dispatch(productsSlice.actions.setProducts(response.data))
+        dispatch(productsSlice.actions.getProducts(response.data))
     }
     catch(e){
 

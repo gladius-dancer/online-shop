@@ -2,7 +2,7 @@ import React from "react";
 import cn from "classnames";
 import "./Categories.scss";
 import {Link} from "react-router-dom";
-import {useAppDispatch, useAppSelector} from "../../hooks/redux";
+import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {change} from "../../store/reducers/NavSlice";
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -29,28 +29,28 @@ function Categories() {
             <div className="nav-side-menu">
                 <div className="menu-list">
                     <h6>Categories</h6>
-                        {categories.filter((item) => item.children_category.length > 0).map((item) => (
-                            <Accordion key={item.id} expanded={expanded === `panel${item.id}`} onChange={handleChange(`panel${item.id}`)}>
-                                <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon/>}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                >
-                                    <Typography>{item.name}</Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <Typography>
-                                        <ul>
-                                            {
-                                                item.children_category.map((subItem) => (
-                                                    <li className="ml-3 pt-3 pb-3 fs-6" key={subItem.id}><Link to="/">{subItem.name}</Link></li>
-                                                ))
-                                            }
-                                        </ul>
-                                    </Typography>
-                                </AccordionDetails>
-                            </Accordion>
-                        ))}
+                    {categories.filter((item) => item.children_category.length > 0).map((item) => (
+                        <Accordion key={item.id} expanded={expanded === `panel${item.id}`}
+                                   onChange={handleChange(`panel${item.id}`)}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon/>}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                            >
+                                <Typography>{item.name}</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Typography>
+                                    {
+                                        item.children_category.map((subItem) => (
+                                            <li className="ml-3 pt-3 pb-3 fs-6" key={subItem.id}><Link
+                                                to="/">{subItem.name}</Link></li>
+                                        ))
+                                    }
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                    ))}
                 </div>
             </div>
         </div>

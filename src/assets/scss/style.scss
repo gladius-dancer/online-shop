@@ -505,7 +505,8 @@ ul li {
 }
 
 .main_header_area {
-  height: 150px;
+  display: flex;
+  align-items: center;
 }
 
 .header-social-area a {
@@ -1087,7 +1088,8 @@ ul li {
 
 .product-img {
   position: relative;
-  height: 270px;
+  height: 100%;
+  width: auto;
   z-index: 1;
   overflow: hidden;
   display: flex;

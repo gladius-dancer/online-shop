@@ -1,30 +1,15 @@
-import React, {useEffect} from "react";
-import images from "../../assets/images";
+import React from "react";
+import images from "../../assets";
 import {InputText} from "../../components/FormComponents/InputText";
-import {useForm} from "react-hook-form";
-import * as yup from "yup";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {ToastContainer} from "react-toastify";
 import "react-toastify/scss/main.scss";
 import {Link, useNavigate} from "react-router-dom";
 import "./Login.scss";
-import {LoginType} from "../../types/LoginType";
-import {useAppDispatch} from "../../hooks/redux";
-import {login} from "../../store/reducers/ActionCreators";
+import {useLoginForm} from "./hooks/useLoginForm";
 
 function Login() {
-    const dispatch = useAppDispatch()
     const navigate = useNavigate();
-    const schema = yup.object().shape({
-        username: yup.string().required(),
-        password: yup.string().required().min(4),
-    });
 
-    const methods = useForm({resolver: yupResolver(schema)});
-    const {handleSubmit, control, setValue, formState: {errors}} = methods;
-    const onSubmit = async (data: LoginType) => {
-        dispatch(login(data));
-    }
+    const {methods: {control}, onSubmit, errors} = useLoginForm()
 
     // useEffect(()=>{
     //     if(userStatus){
@@ -34,7 +19,6 @@ function Login() {
 
     return (
         <div>
-            <ToastContainer/>
             <header className="header_area">
                     <div className="container">
                         <div className="d-flex align-items-center justify-content-center">
@@ -46,7 +30,7 @@ function Login() {
             </header>
             <section className="login-form d-flex justify-content-center align-content-center">
                 <div className="checkout_details_area mb-50 mx-auto clearfix col-md-4">
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form onSubmit={onSubmit}>
                         <div className="column">
                             <div className="col-md-12 mb-3 pl-0 pr-0">
                                 <label htmlFor="first_name">Username <span>*</span></label>

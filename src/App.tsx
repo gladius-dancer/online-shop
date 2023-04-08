@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import Main from "./pages/Main/Main";
 import Login from "./pages/Login/Login";
 import {useEffect} from "react";
-import {useAppDispatch} from "./hooks/redux";
+import {useAppDispatch} from "./hooks/useRedux";
 import {getCategories, getProducts} from "./store/reducers/ActionCreators";
 
 Modal.setAppElement("#root");

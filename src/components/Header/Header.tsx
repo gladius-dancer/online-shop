@@ -1,10 +1,10 @@
 import * as React from "react";
-import images from "../../assets/images";
+import images from "../../assets";
 import {Link} from "react-router-dom";
 import "./Header.scss";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/scss/main.scss";
-import {useAppDispatch, useAppSelector} from "../../hooks/redux";
+import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {change} from "../../store/reducers/NavSlice";
 
 function Header() {
@@ -32,49 +32,11 @@ function Header() {
                 <div className="container h-100">
                     <div className="row h-100 align-items-center justify-content-end">
                         <div className="col-12">
-                            <div className="top_single_area top-area">
+                            <div className="top_single_area d-flex justify-content-between">
                                 <div className="top_logo">
                                     <Link to={"/"}><img src={images.logo} alt=""/></Link>
                                 </div>
-                                <div className="main_header_area">
-                                    <div className="container h-100">
-                                        <div className="row h-100">
-                                            <div className="col-12 d-flex align-items-center justify-content-between">
-                                                {/* Menu Area */}
-                                                <div className="main-menu-area">
-                                                    <nav className="navbar navbar-expand-lg align-items-start">
 
-                                                        <button className="navbar-toggler" type="button" data-toggle="collapse"
-                                                                data-target="#karl-navbar"
-                                                                aria-controls="karl-navbar" aria-expanded="false"
-                                                                aria-label="Toggle navigation"><span
-                                                            className="navbar-toggler-icon"><i className="ti-menu"></i></span></button>
-
-                                                        <div className="collapse navbar-collapse align-items-start collapse"
-                                                             id="karl-navbar">
-                                                            <ul className="navbar-nav animated" id="nav">
-                                                                <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li>
-                                                                <li className="nav-item dropdown">
-                                                                    <a className="nav-link dropdown-toggle" href="#" id="karlDropdown"
-                                                                       role="button"
-                                                                       data-toggle="dropdown" aria-haspopup="true"
-                                                                       aria-expanded="false">Pages</a>
-                                                                    <div className="dropdown-menu" aria-labelledby="karlDropdown">
-                                                                        <a className="dropdown-item" href="index.html">Home</a>
-                                                                        <a className="dropdown-item" href="shop.html">Shop</a>
-                                                                        <a className="dropdown-item" href="cart.html">Cart</a>
-                                                                        <a className="dropdown-item" href="checkout.html">Checkout</a>
-                                                                    </div>
-                                                                </li>
-                                                                <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </nav>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="header-cart-menu card-menu">
                                     <div className="cart">
                                         <Link to={"/cart"} id="header-cart-btn">
@@ -114,6 +76,45 @@ function Header() {
                                         </a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="main_header_area">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 d-flex align-items-center justify-content-between">
+                            {/* Menu Area */}
+                            <div className="main-menu-area">
+                                <nav className="navbar navbar-expand-lg align-items-start">
+
+                                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                            data-target="#karl-navbar"
+                                            aria-controls="karl-navbar" aria-expanded="false"
+                                            aria-label="Toggle navigation"><span
+                                        className="navbar-toggler-icon"><i className="ti-menu"></i></span></button>
+
+                                    <div className="collapse navbar-collapse align-items-start collapse"
+                                         id="karl-navbar">
+                                        <ul className="navbar-nav animated" id="nav">
+                                            <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li>
+                                            <li className="nav-item dropdown">
+                                                <a className="nav-link dropdown-toggle" href="#" id="karlDropdown"
+                                                   role="button"
+                                                   data-toggle="dropdown" aria-haspopup="true"
+                                                   aria-expanded="false">Pages</a>
+                                                <div className="dropdown-menu" aria-labelledby="karlDropdown">
+                                                    <a className="dropdown-item" href="index.html">Home</a>
+                                                    <a className="dropdown-item" href="shop.html">Shop</a>
+                                                    <a className="dropdown-item" href="cart.html">Cart</a>
+                                                    <a className="dropdown-item" href="checkout.html">Checkout</a>
+                                                </div>
+                                            </li>
+                                            <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
                             </div>
                         </div>
                     </div>
