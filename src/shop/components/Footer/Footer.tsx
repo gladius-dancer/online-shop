@@ -28,11 +28,11 @@ function Footer() {
           <div className="col-12 col-sm-6 col-md-3 col-lg-2">
             <div className="single_footer_area">
               <ul className="footer_widget_menu">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Faq</a></li>
-                <li><a href="#">Returns</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">About</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Blog</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Faq</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Returns</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -40,10 +40,10 @@ function Footer() {
           <div className="col-12 col-sm-6 col-md-3 col-lg-2">
             <div className="single_footer_area">
               <ul className="footer_widget_menu">
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">Shipping</a></li>
-                <li><a href="#">Our Policies</a></li>
-                <li><a href="#">Afiliates</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">My Account</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Shipping</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Our Policies</a></li>
+                <li><a href="src/shop/components/Footer/Footer#">Afiliates</a></li>
               </ul>
             </div>
           </div>
@@ -54,7 +54,7 @@ function Footer() {
                 <h6>Subscribe to our newsletter</h6>
               </div>
               <div className="subscribtion_form">
-                <form action="#" method="post">
+                <form action="src/shop/components/Footer/Footer#" method="post">
                   <input type="email" name="mail" className="mail" placeholder="Your email here"/>
                     <button type="submit" className="submit">Subscribe</button>
                 </form>
@@ -69,10 +69,9 @@ function Footer() {
           <div className="row">
             <div className="col-12">
               <div className="footer_social_area text-center">
-                <a href="#"><i className="fa fa-pinterest" aria-hidden="true"></i></a>
-                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="src/shop/components/Footer/Footer#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="src/shop/components/Footer/Footer#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="src/shop/components/Footer/Footer#"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>

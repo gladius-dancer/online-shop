@@ -7,7 +7,7 @@ import "react-toastify/scss/main.scss";
 import {useAppDispatch, useAppSelector} from "../../hooks/useRedux";
 import {change} from "../../store/reducers/NavSlice";
 
-function Header() {
+export default function Header() {
 
     const dispatch = useAppDispatch()
 
@@ -71,9 +71,9 @@ function Header() {
                                     </div>
 
                                     <div className="header-right-side-menu ml-15" onClick={()=>dispatch(change())}>
-                                        <a href="#" id="sideMenuBtn">
+                                        <span id="sideMenuBtn">
                                             <i className="ti-menu" aria-hidden="true"></i>
-                                        </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -98,20 +98,20 @@ function Header() {
                                     <div className="collapse navbar-collapse align-items-start collapse"
                                          id="karl-navbar">
                                         <ul className="navbar-nav animated" id="nav">
-                                            <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li>
+                                            <li className="nav-item active"><a className="nav-link" href="">Home</a></li>
                                             <li className="nav-item dropdown">
-                                                <a className="nav-link dropdown-toggle" href="#" id="karlDropdown"
+                                                <a className="nav-link dropdown-toggle" href="" id="karlDropdown"
                                                    role="button"
                                                    data-toggle="dropdown" aria-haspopup="true"
                                                    aria-expanded="false">Pages</a>
                                                 <div className="dropdown-menu" aria-labelledby="karlDropdown">
-                                                    <a className="dropdown-item" href="index.html">Home</a>
+                                                    <a className="dropdown-item" href="">Home</a>
                                                     <a className="dropdown-item" href="shop.html">Shop</a>
                                                     <a className="dropdown-item" href="cart.html">Cart</a>
                                                     <a className="dropdown-item" href="checkout.html">Checkout</a>
                                                 </div>
                                             </li>
-                                            <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
+                                            <li className="nav-item"><a className="nav-link" href="">Contact</a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -123,5 +123,3 @@ function Header() {
         </header>
     );
 }
-
-export default Header;

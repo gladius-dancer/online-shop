@@ -2,7 +2,7 @@ import * as React from "react";
 import App from "./src/App";
 import {createRoot} from "react-dom/client";
 import {Provider} from "react-redux";
-import {setupStore} from "./src/store/store";
+import {setupStore} from "./src/shop/store/store";
 
 const store = setupStore();
 

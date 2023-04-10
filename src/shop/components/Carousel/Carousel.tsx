@@ -21,8 +21,8 @@ function Carousel() {
         <section className="welcome_area">
             <div className="welcome_slides owl-carousel" ref={carouselRef}>
 
-                <div className="single_slide height-600 bg-img background-overlay"
-                     style={{background: `${images.bg1}`}}>
+                <div className="single_slide height-800 bg-img background-overlay"
+                     style={{background: `url(${images.bg1})`}}>
                     <div className="container h-100">
                         <div className="row h-100 align-items-center">
                             <div className="col-12">
@@ -31,7 +31,7 @@ function Carousel() {
                                         we offer free shipping</h6>
                                     <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Fashion
                                         Trends</h2>
-                                    <a href="#" className="btn karl-btn" data-animation="fadeInUp" data-delay="1s"
+                                    <a href="src/shop/components/Carousel/Carousel#" className="btn karl-btn" data-animation="fadeInUp" data-delay="1s"
                                        data-duration="500ms">Shop Now</a>
                                 </div>
                             </div>
@@ -39,8 +39,8 @@ function Carousel() {
                     </div>
                 </div>
 
-                <div className="single_slide height-600 bg-img background-overlay"
-                     style={{background: `${images.bg2}`}}>
+                <div className="single_slide height-800 bg-img background-overlay"
+                     style={{background: `url(${images.bg2})`}}>
                     <div className="container h-100">
                         <div className="row h-100 align-items-center">
                             <div className="col-12">
@@ -49,7 +49,7 @@ function Carousel() {
                                         offer free shipping</h6>
                                     <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Summer
                                         Collection</h2>
-                                    <a href="#" className="btn karl-btn" data-animation="fadeInLeftBig" data-delay="1s"
+                                    <a href="src/shop/components/Carousel/Carousel#" className="btn karl-btn" data-animation="fadeInLeftBig" data-delay="1s"
                                        data-duration="500ms">Check Collection</a>
                                 </div>
                             </div>
@@ -57,8 +57,8 @@ function Carousel() {
                     </div>
                 </div>
 
-                <div className="single_slide height-600 bg-img background-overlay"
-                     style={{backgroundImage: `${images.bg3}`}}>
+                <div className="single_slide height-800 bg-img background-overlay"
+                     style={{background: `url(${images.bg3})`}}>
                     <div className="container h-100">
                         <div className="row h-100 align-items-center">
                             <div className="col-12">
@@ -67,7 +67,7 @@ function Carousel() {
                                         offer free shipping</h6>
                                     <h2 data-animation="bounceInDown" data-delay="500ms" data-duration="500ms">Women
                                         Fashion</h2>
-                                    <a href="#" className="btn karl-btn" data-animation="fadeInRightBig" data-delay="1s"
+                                    <a href="src/shop/components/Carousel/Carousel#" className="btn karl-btn" data-animation="fadeInRightBig" data-delay="1s"
                                        data-duration="500ms">Check Collection</a>
                                 </div>
                             </div>

@@ -6,7 +6,7 @@ function Discount() {
       {/* Single Discount Area */}
       <div className="single-discount-area">
         <h5>Free Shipping &amp; Returns</h5>
-        <h6><a href="#">BUY NOW</a></h6>
+        <h6><a href="src/shop/components/Discount/Discount#">BUY NOW</a></h6>
       </div>
       {/* Single Discount Area */}
       <div className="single-discount-area">

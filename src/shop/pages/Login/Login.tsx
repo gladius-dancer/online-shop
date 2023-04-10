@@ -50,9 +50,9 @@ function Login() {
                     <div className="row">
                         <div className="col-12">
                             <div className="footer_social_area text-center">
-                                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="src/shop/pages/Login/Login#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="src/shop/pages/Login/Login#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="src/shop/pages/Login/Login#"><i className="fa fa-linkedin" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>

@@ -28,6 +28,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -54,6 +55,7 @@ p {
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin: 0;
 }
 
 a:focus {
@@ -92,7 +94,7 @@ ul li {
   position: relative;
   z-index: 2;
   background-position: center center;
-  background-size: cover;
+  background-size: cover !important;
 }
 
 .background-overlay:before,
@@ -359,7 +361,7 @@ ul li {
   height: 150px;
   width: 100%;
   position: relative;
-  z-index: 1000;
+  z-index: 2;
 }
 
 .cart > a {
@@ -399,7 +401,7 @@ ul li {
   z-index: 500;
 }
 
-.header-right-side-menu > a {
+.header-right-side-menu > span {
   width: 60px;
   display: block;
   height: 60px;
@@ -411,8 +413,8 @@ ul li {
   border-radius: 50%;
 }
 
-.header-right-side-menu > a:focus,
-.header-right-side-menu > a:hover {
+.header-right-side-menu > span:focus,
+.header-right-side-menu > span:hover {
   background-color: #ff084e;
   color: #fff;
 }

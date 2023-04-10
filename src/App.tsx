@@ -1,12 +1,13 @@
 import * as React from "react";
-import "./assets/scss/style.scss";
+import "./shop/assets/scss/style.scss";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Modal from "react-modal";
-import Main from "./pages/Main/Main";
-import Login from "./pages/Login/Login";
+import Main from "./shop/pages/Main/Main";
+import Login from "./shop/pages/Login/Login";
 import {useEffect} from "react";
-import {useAppDispatch} from "./hooks/useRedux";
-import {getCategories, getProducts} from "./store/reducers/ActionCreators";
+import {useAppDispatch} from "./shop/hooks/useRedux";
+import {getCategories, getProducts} from "./shop/store/reducers/ActionCreators";
+import Panel from "./admin-panel/pages/Panel";
 
 Modal.setAppElement("#root");
 
@@ -23,6 +24,7 @@ const App = () => {
             <Routes>
                 <Route path={"/"} element={<Main/>}/>
                 <Route path={"/login"} element={<Login/>}/>
+                <Route path={"/admin"} element={<Panel/>}/>
             </Routes>
         </BrowserRouter>
     );
