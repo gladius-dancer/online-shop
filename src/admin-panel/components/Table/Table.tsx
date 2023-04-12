@@ -14,6 +14,7 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
+import {withAdminModules} from "../../hocs/withAdminModules";
 
 interface TablePaginationActionsProps {
     count: number;
@@ -101,7 +102,7 @@ const rows = [
     createData('Oreo', 437, 18.0),
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
-export default function CustomPaginationActionsTable() {
+export default function TableComponent() {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 

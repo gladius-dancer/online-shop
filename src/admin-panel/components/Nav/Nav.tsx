@@ -152,42 +152,49 @@ export default function MiniDrawer() {
                 <Divider/>
                 <List>
                     <ListItem
+                        link="/admin/dashboard"
                         open={open}
                         text="Dashboard"
                         icon={<DashboardIcon/>}
 
                     />
                     <ListItem
+                        link="/admin/orders"
                         open={open}
                         text="Orders"
                         icon={<AddShoppingCartIcon/>}
 
                     />
                     <ListItem
+                        link="products"
                         open={open}
                         text="Products"
                         icon={<ShoppingCartIcon/>}
 
                     />
                     <ListItem
+                        link="users"
                         open={open}
                         text="Users"
                         icon={<GroupIcon/>}
 
                     />
                     <ListItem
+                        link="category"
                         open={open}
                         text="Category"
                         icon={<CategoryIcon/>}
 
                     />
                     <ListItem
+                        link="country"
                         open={open}
                         text="Country"
                         icon={<PublicIcon/>}
 
                     />
                     <ListItem
+                        link="callback"
                         open={open}
                         text="Call Back"
                         icon={<CallIcon/>}

@@ -6,29 +6,34 @@ import MailIcon from "@mui/icons-material/Mail";
 import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import {NavType} from "../../types/NavTypes";
+import {Link} from "react-router-dom";
 
-export default function NavItem({open, text, icon}: NavType) {
+export default function NavItem({link, open, text, icon}: NavType) {
 
     return (
         <ListItem key={text} disablePadding sx={{display: 'block'}}>
-            <ListItemButton
-                sx={{
-                    minHeight: 48,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 2.5,
-                }}
-            >
-                <ListItemIcon
+            <Link to={`${link}`}>
+                <ListItemButton
                     sx={{
-                        minWidth: 0,
-                        mr: open ? 3 : 'auto',
-                        justifyContent: 'center',
+                        minHeight: 48,
+                        justifyContent: open ? 'initial' : 'center',
+                        px: 2.5,
                     }}
                 >
-                    {icon}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{opacity: open ? 1 : 0}}/>
-            </ListItemButton>
+
+                    <ListItemIcon
+                        sx={{
+                            minWidth: 0,
+                            mr: open ? 3 : 'auto',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={text} sx={{opacity: open ? 1 : 0}}/>
+                </ListItemButton>
+            </Link>
+
         </ListItem>
     );
 }
